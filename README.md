@@ -51,39 +51,43 @@ Pass mock image data down to App as props + render said data in ImageDisplay and
   * set props to your state once your component mounts
 
 #### STEP 4:
-Pass mock options data dow to ImageFetcher and design ImageFetcher.js such that a user can click on a button, which runs a function that console.log's what the user has clicked on
+Design functionality so that when a function clicks on a CollectionItem, ImageDisplay changes to what the user clicked on.
+  * Use the helper function in ImageDisplay to convert the image to 400x400
 
 #### STEP 5:
+Pass mock options data dow to ImageFetcher and design ImageFetcher.js such that a user can click on a button, which runs a function that console.log's what the user has clicked on
+
+#### STEP 6:
 In ImageFetcher.js, instead of console logging what the user clicked, refactor the code to use axios + https://source.unsplash.com/ and send a request that will return a url for a 100x100 image of a dog
   * hint: google "npm axios" to find out the syntax for a GET request
   * hist: find out how to make a request to this website.  In the response from the site, you'll get the url in something like request.responseURL
 
-#### STEP 6:
+#### STEP 7:
 As needed, update App.js so that image data received from the API will render on the page in addition to any existing image data
   * remove the mock data
 
 ### Advanced
-Note: if you're not comfortable with STEPS 1-6, redo STEPS 1-6 instead
-
-#### STEP 7:
-Create a new feature.  Example: like/dislike counter for each image
+Note: if you're not comfortable with STEPS 1-7, redo STEPS 1-7 instead
 
 #### STEP 8:
-Add css, have fun.
+Create a new feature.  Example: like/dislike counter for each image
 
 #### STEP 9:
-Only allow 5 images to be rendered inside of Collection.js
+Add css, have fun.
 
 #### STEP 10:
-Create feature to add new buttons
+Only allow 5 images to be rendered inside of Collection.js
 
 #### STEP 11:
+Create feature to add new buttons
+
+#### STEP 12:
 Refactor application to use Redux or Context API instead of passing props down manually
 
 ### Solutions
 Once you are done with steps 1-7, solution code is available on branch solution1
 ```
-  $ git checkout solution1
+  $ git checkout solution
 ```
 
 ### Acknowledgments
