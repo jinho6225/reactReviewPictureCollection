@@ -1,12 +1,35 @@
-/*
+import React from 'react';
 
-  =)
+import Collection from './Collection.js'
+import Collectionitem from './Collectionitem.js'
 
-  <div id="mainApp">
-    Image fetcher goes here
-    <div className="collectionRow">
-      image display goes here, but only if there's an current image
-      collection of images goes here
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      collection: [],
+      currentImage: null
+    }
+  }
+
+  componentDidMount() {
+    let { collection, currentImage } = this.props;
+    this.setState({ collection, currentImage: collection[0] });
+  }
+
+  render() {
+    const { collection, currentImage } = this.state;
+    return (
+    <div id="mainApp">
+        <Collection collections={collection}/>
+      <div className="collectionRow">
+        <Collectionitem currentImage={currentImage} />
+      </div>
     </div>
-  </div>
-*/
+    )
+  }
+}
+
+
+export default App;
