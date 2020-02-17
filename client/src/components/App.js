@@ -25,7 +25,6 @@ class App extends React.Component {
 
   render() {
     const { collections } = this.state;
-    console.log(collections)
     return (
       <div id="mainApp">
         <ImageFetcher addImg={this.addImg} />
