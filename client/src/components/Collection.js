@@ -1,15 +1,15 @@
+
 import React from 'react';
+import CollectionItem from './CollectionItem.js';
 
-function Collection(props) {
-  const { collections } = props
-
+const Collection = (props) => {
   return (
     <div className="container" id="collection">
-      {collections.map((collection, i) => {
-        return <img key={i} src={collection} />
-      })}
+      {props.collection.map((image, i) =>
+        <CollectionItem image={image} key={i} changeImage={props.changeImage} />
+      )}
     </div>
   )
-}
+};
 
 export default Collection;
