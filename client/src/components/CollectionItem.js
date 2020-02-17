@@ -1,13 +1,20 @@
 import React from 'react';
 
-const CollectionItem = (props) => {
-  const { collection } = props
+class CollectionItem extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  return (
-    <div>
-      <img src={collection} alt=""/>
-    </div>
-  )
+  render() {
+  const { collection, changeImg } = this.props
+    return (
+      <div>
+        <img src={collection} onClick={() => {
+          changeImg(collection)
+        }} alt=""/>
+      </div>
+    )
+  }
 }
 
 export default CollectionItem;

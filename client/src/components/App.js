@@ -8,15 +8,18 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      collections: []
+      collections: [],
+      currentImg: null
     }
     this.addImg = this.addImg.bind(this)
     this.getImg = this.getImg.bind(this)
+    this.changeImg = this.changeImg.bind(this)
+
   }
 
   componentDidMount () {
     const { collections } = this.props;
-    this.setState({ collections });
+    this.setState({ collections, currentImg: collections[0] });
   }
 
   getImg() {
@@ -36,14 +39,21 @@ class App extends React.Component {
     });
   }
 
+  changeImg(collection) {
+    this.setState({
+      currentImg: collection
+    });
+  }
+
   render() {
-    const { collections } = this.state;
+    const { collections, currentImg } = this.state;
+    console.log(currentImg)
     return (
       <div id="mainApp">
         <ImageFetcher getImg={this.getImg} />
         <div className="collectionRow">
-          <ImageDisplay />
-          <Collection collections={collections}/>
+          <ImageDisplay currentImg={currentImg} />
+          <Collection collections={collections} changeImg={this.changeImg} />
         </div>
       </div>
     )

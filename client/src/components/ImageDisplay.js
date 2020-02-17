@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ImageDisplay = () => {
-
+const ImageDisplay = (props) => {
+  const { currentImg } = props
   return (
-    <div id="imageDisplay" className="container">
-      <img src='https://images.unsplash.com/photo-1506780685701-ba404b9e640d' alt="" height="400" width="400"/>
+    <div id="" className="container">
+      <img src={currentImg} alt="" height="200" width="200" />
     </div>
   )
 }
