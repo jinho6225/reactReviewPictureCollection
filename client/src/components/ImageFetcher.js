@@ -1,19 +1,19 @@
 import React from 'react';
 
-const ImageFetcher = (props) => {
-  const { options } = props
-
-  const clickHandler = () => {
-    console.log('watsup!')
+class ImageFetcher extends React.Component {
+  constructor(props) {
+    super(props)
   }
 
-  return (
-    <div className="container">
-      {options.map((option, i) =>
-        <button onClick={clickHandler} key={i}>{option}</button>
-      )}
-    </div>
-  )
+
+  render() {
+    const { getImage } = this.props
+    return (
+      <div className="container">
+          <button onClick={getImage} >Add Picture</button>
+      </div>
+    )
+  }
 }
 
 export default ImageFetcher;
