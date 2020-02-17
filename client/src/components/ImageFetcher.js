@@ -1,9 +1,19 @@
-/*
-  <div className="container">
-    button option 1
-    button option 2
-    button option 3
-    button option 4
-    button option 5
-  </div>
-*/
+import React from 'react';
+
+const ImageFetcher = (props) => {
+  const { options } = props
+
+  const clickHandler = () => {
+    console.log('watsup!')
+  }
+
+  return (
+    <div className="container">
+      {options.map((option, i) =>
+        <button onClick={clickHandler} key={i}>{option}</button>
+      )}
+    </div>
+  )
+}
+
+export default ImageFetcher;

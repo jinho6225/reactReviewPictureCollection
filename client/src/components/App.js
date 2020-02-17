@@ -1,12 +1,27 @@
-/*
+import React from 'react';
+import Collection from './Collection'
+import ImageDisplay from './ImageDisplay'
+import ImageFetcher from './ImageFetcher'
 
-  =)
 
-  <div id="mainApp">
-    Image fetcher goes here
-    <div className="collectionRow">
-      image display goes here, but only if there's an current image
-      collection of images goes here
-    </div>
-  </div>
-*/
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const { collections, options } = this.props
+
+    return (
+      <div id="mainApp">
+        <ImageFetcher options={options}/>
+        <div className="collectionRow">
+          <ImageDisplay />
+          <Collection collections={collections}/>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default App;
